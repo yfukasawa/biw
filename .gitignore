@@ -1,2 +1,5 @@
 # Jupyter Book build output
 _build/
+_static/
+.ipynb_checkpoints/
+django-class/
