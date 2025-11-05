@@ -1,0 +1,28 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+  - caption: Python基礎
+    chapters:
+    - file: python-introduction
+    - file: python-list
+    - file: python-collection
+    - file: python-condition
+    - file: python-loop
+    - file: python-coding
+    - file: python-function
+    - file: python-file
+    - file: python-network
+    - file: python-webapp
+    - file: python-webapp2
+    - file: python-guiapp
+    - file: python-guiapp2
+    - file: python-guiapp3
+    - file: python-guiapp4
+  - caption: 環境構築
+    chapters:
+    - file: python-setup
+#- file: notebooks
+#- file: markdown-notebooks
