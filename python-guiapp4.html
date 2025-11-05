@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python 基礎 (第15週) &#8212; プログラミング演習 (Python)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python-guiapp4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pythonと計算環境の構築" href="python-setup.html" />
+    <link rel="prev" title="Python 基礎 (第14週)" href="python-guiapp3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.jpeg" class="logo__image only-light" alt="プログラミング演習 (Python) - Home"/>
+    <script>document.write(`<img src="_static/logo.jpeg" class="logo__image only-dark" alt="プログラミング演習 (Python) - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Pythonプログラミング演習 (基礎)
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python基礎</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-introduction.html">Python 基礎 (第1週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-list.html">Python 基礎 (第2週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-collection.html">Python 基礎 (第3週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-condition.html">Python 基礎 (第4週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-loop.html">Python 基礎 (第5週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-coding.html">Python 基礎 (第6週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-function.html">Python 基礎 (第7週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-file.html">Python 基礎 (第8週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-network.html">Python 基礎 (第9週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-webapp.html">Python 基礎 (第10週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-webapp2.html">Python 基礎 (第11週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-guiapp.html">Python 基礎 (第12週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-guiapp2.html">Python 基礎 (第13週)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-guiapp3.html">Python 基礎 (第14週)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Python 基礎 (第15週)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">環境構築</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python-setup.html">Pythonと計算環境の構築</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/python-guiapp4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python 基礎 (第15週)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">復習</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github">githubを使うのに必要なもの</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tkinter">[復習] tkinterでボールを描画</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">キーボードの入力を受け付け</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">「状態」という概念</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">キーボードによるパラメータの変更</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-15">
+<h1>Python 基礎 (第15週)<a class="headerlink" href="#python-15" title="Permalink to this heading">#</a></h1>
+<p>本コンテンツは<a class="reference external" href="https://c-bio.mine.utsunomiya-u.ac.jp/fukasawa/">深沢研究室</a>でPythonを教えるために作成された演習資料です。</p>
+<section id="id1">
+<h2>復習<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="github">
+<h3>githubを使うのに必要なもの<a class="headerlink" href="#github" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>ユーザー名</p></li>
+<li><p>パスワード (Webなどでのログイン時に必要)</p></li>
+<li><p>token (コードをwebにアップロードするときに必要)</p></li>
+</ol>
+</section>
+</section>
+<section id="tkinter">
+<h2>[復習] tkinterでボールを描画<a class="headerlink" href="#tkinter" title="Permalink to this heading">#</a></h2>
+<p>今回は、引き続きGUIを作っていきます。まずは、動くボールを表示させましょう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">window_width</span>  <span class="o">=</span> <span class="mi">700</span>
+<span class="n">window_height</span> <span class="o">=</span> <span class="mi">500</span>
+
+<span class="n">canvas_width</span>  <span class="o">=</span> <span class="mi">600</span>
+<span class="n">canvas_height</span> <span class="o">=</span> <span class="mi">400</span>
+
+<span class="c1"># co: circle_object</span>
+<span class="n">co</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">&quot;dx&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;dy&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_circle</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">r</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">move_circle</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+     <span class="c1"># 仮の変数に移動後の値を記録</span>
+     <span class="n">_x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+     <span class="n">_y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dy</span>
+     <span class="c1"># 上左右の壁に当たった？</span>
+     <span class="k">if</span> <span class="n">_x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">_x</span> <span class="o">&gt;</span> <span class="n">canvas_width</span><span class="p">:</span>
+         <span class="n">dx</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+     <span class="k">if</span> <span class="n">_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">_y</span> <span class="o">&gt;</span> <span class="n">canvas_height</span><span class="p">:</span>
+         <span class="n">dy</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+     <span class="c1"># 移動内容を反映</span>
+     <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">_x</span> <span class="o">&lt;=</span> <span class="n">canvas_width</span><span class="p">:</span>
+         <span class="n">x</span> <span class="o">=</span> <span class="n">_x</span>
+     <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">_y</span> <span class="o">&lt;=</span> <span class="n">canvas_height</span><span class="p">:</span>
+         <span class="n">y</span> <span class="o">=</span> <span class="n">_y</span>
+
+     <span class="k">return</span> <span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">getRadiusValue</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">par_rad</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;debug: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">co</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">x</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">window_width</span><span class="p">,</span> <span class="n">window_height</span><span class="p">))</span>
+
+    <span class="c1"># Windowのタイトル</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GUI&quot;</span><span class="p">)</span>
+
+    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Programming training&quot;</span><span class="p">)</span>
+    <span class="n">label</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># パラメータ</span>
+    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;半径&quot;</span><span class="p">)</span>
+    <span class="n">label_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">par_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">()</span>
+    <span class="n">par_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">button_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;更新&quot;</span><span class="p">)</span>
+    <span class="n">button_rad</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="n">getRadiusValue</span><span class="p">)</span> <span class="c1">## ←← ここが大事</span>
+    <span class="n">button_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+    <span class="n">canvas</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">canvas_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">canvas_height</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">window_width</span><span class="o">-</span><span class="n">canvas_width</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">window_height</span><span class="o">-</span><span class="n">canvas_height</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="c1"># Create a circle</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">create_circle</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+        <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dx&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">move_circle</span><span class="p">(</span><span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dx&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dy&quot;</span><span class="p">])</span>
+
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.04</span><span class="p">)</span>
+        <span class="n">window</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+
+    <span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>キーボードの入力を受け付け<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>前回はマウスの入力を考えましたが、今回はキーボードの入力を考えてみます。<br />
+まずは、スペースキーを押すと動作を止め、再度スペースを押すと動作を再開するような機能を追加していきましょう。</p>
+<p>その準備として、キーボードの入力を受け付けるように変更しましょう。<br />
+前回つかった<code class="docutils literal notranslate"><span class="pre">.bind()</span></code>というものを再び使いましょう。マウスだとボタンにつけるのが直感的ですが、今回のキーボードの場合はウィンドウ全体を操作したいので<code class="docutils literal notranslate"><span class="pre">window</span></code>に<code class="docutils literal notranslate"><span class="pre">.bind()</span></code>します。<br />
+ここで、<code class="docutils literal notranslate"><span class="pre">window</span></code>とはTk()という関数で作った変数のことです(参考例: <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">=</span> <span class="pre">tk.Tk()</span></code>)。</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;KeyPress&gt;</span></code>というパラメータをbind()に与えると、任意(特定のものではない、という意味です)のキー入力でkey_input()という関数を呼び出せるようにします。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GUI&quot;</span><span class="p">)</span>
+    <span class="c1"># キー入力</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;KeyPress&gt;&quot;</span><span class="p">,</span> <span class="n">key_input</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">key_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">keysym</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>演習</strong></p>
+<ol class="arabic simple">
+<li><p>key_inputという関数をどこに書くべきか決めてください。</p></li>
+<li><p>自分のターミナルに押したキーが表示されるのを確認してください。</p></li>
+<li><p>ifを使って、スペースキーを押した時にだけprintするようにkey_input()を変更してください。ヒント: <code class="docutils literal notranslate"><span class="pre">tkinterでスペースキーを押すと、keysymという変数に&quot;space&quot;という文字を返します。</span></code></p></li>
+</ol>
+<p><img alt="tkinter-canvas-parts" src="_images/key_input.png" /></p>
+</section>
+<section id="id3">
+<h2>「状態」という概念<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>動作の制御に必要な情報は何でしょうか。現在の「状態」を保持しておく必要があります。この場合は、ボールが「動いている」と「動いていない」の2つの状態だけとします。<br />
+こういうとき、プログラミングの世界ではブーリアン (Boolean)という変数を使います。TrueとFalse、真と偽、2進数の0と1など、表現の仕方は様々ですが2つというのがポイントです。<br />
+Pythonでは、TrueとFalseを用います。</p>
+<p>is_stoppedという変数を使います。こういう変数はフラグ、などと呼ばれたりもします。<br />
+この変数は後で使います。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">canvas_width</span>  <span class="o">=</span> <span class="mi">600</span>
+<span class="n">canvas_height</span> <span class="o">=</span> <span class="mi">400</span>
+
+<span class="n">is_stopped</span>  <span class="o">=</span> <span class="kc">False</span> <span class="c1"># ブーリアン型の変数を定義</span>
+</pre></div>
+</div>
+<p>続いて、動作を止めるにはどうするべきか考えましょう。1つのやり方はボールのパラメータを変更することだと言えます。
+この場合、止める直前のパラメータを保持しておく必要があるので、<strong>t_co</strong>という変数を作ってみましょう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># co: circle_object
+co = { &quot;x&quot;: 350, &quot;y&quot;: 250, &quot;dx&quot;: 10, &quot;dy&quot;: 10, &quot;r&quot;: 5}
+t_co = {&quot;x&quot;: 0, &quot;y&quot;: 0, &quot;dx&quot;: 0, &quot;dy&quot;: 0, &quot;r&quot;: 0}
+
+def stop_and_go():
+    global is_stopped
+    if is_stopped:
+        is_stopped = False
+        for x in t_co:
+            co[x] = t_co[x]
+    else:
+        is_stopped = True
+        for x in co:
+            t_co[x] = co[x]
+        co[&quot;dx&quot;] = co[&quot;dy&quot;] = ??
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def key_input(event):
+    if event.keysym == ??:
+        print(&quot;debug: space key is hit.&quot;)
+        stop_and_go()
+</pre></div>
+</div>
+<p><strong>演習</strong></p>
+<ol class="arabic simple">
+<li><p>stop_and_go()という関数を完成させてください。</p></li>
+<li><p>key_input()からスペースキーが押された時に、stop_and_go()を呼び出すようにしてください。</p></li>
+<li><p>ボールがスペースキーで止まったり動いたりすることを確認してください。</p></li>
+</ol>
+</section>
+<section id="id4">
+<h2>キーボードによるパラメータの変更<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>動作を止めたりするだけではなく、ボールを動かせるようにしてみましょう。<br />
+位置というパラメータ(変数)を変えれば実現できそうです。</p>
+<p><code class="docutils literal notranslate"><span class="pre">move_circle_key()</span></code></p>
+<p>という関数を書いてみましょう。<br />
+以前にtkinterが自動でボールを動かす<code class="docutils literal notranslate"><span class="pre">move_circle()</span></code>という関数を作りましたが、それをキーボードでマニュアルで行うようにする関数です。
+このとき、ボールが動いていると難しいので、停止「状態」のときにだけ反応するようにしましょう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">move_circle_key</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">co</span><span class="p">,</span> <span class="n">t_co</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">is_stopped</span><span class="p">:</span>
+        <span class="k">return</span>
+    <span class="n">_x</span> <span class="o">=</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span>
+    <span class="n">_y</span> <span class="o">=</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">if</span> <span class="n">_x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">_x</span> <span class="o">&gt;</span> <span class="n">canvas_width</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">if</span> <span class="n">_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">_y</span> <span class="o">&gt;</span> <span class="n">canvas_height</span><span class="p">:</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>   <span class="o">+=</span> <span class="n">a</span>
+    <span class="n">t_co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span>
+    <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>   <span class="o">+=</span> <span class="n">b</span>
+    <span class="n">t_co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>このままだとキーボードに反応しないので、key_input()からmove_circle()を呼び出すようにしてください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def key_input(event):
+    print(&quot;debug: %s is hit.&quot; % event.keysym)
+    if event.keysym == &quot;space&quot;:
+        stop_and_go()
+    elif event.keysym==??:
+        move_circle_key(??, ??)
+    elif event.keysym==??:
+        move_circle_key(??, ??)
+    # お好みで続けてください。
+</pre></div>
+</div>
+<p><strong>演習</strong></p>
+<ol class="arabic simple">
+<li><p>key_input()を変更し、キーボードによる移動を決めてみてください。</p></li>
+<li><p>動作が自分の期待通りか確認してみてください。</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>大分進んできました。
+上のコードに数字を入力する欄を２つ追加し、 位置を半径のように数字を入力しても変更できるようにしてみてください。
+動作を確認したら、githubへアップロードをお願いします。<br />
+ここまで終われば、githubのURLを送ってください。</p>
+<p><a class="reference external" href="https://github.com/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E5%90%8D/tkinter-coding.git">https://github.com/アカウント名/tkinter-coding.git</a></p>
+</div>
+<p>今週はここまでです。お疲れさまでした。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="python-guiapp3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Python 基礎 (第14週)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="python-setup.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pythonと計算環境の構築</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">復習</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github">githubを使うのに必要なもの</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tkinter">[復習] tkinterでボールを描画</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">キーボードの入力を受け付け</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">「状態」という概念</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">キーボードによるパラメータの変更</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yoshinori Fukasawa
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
