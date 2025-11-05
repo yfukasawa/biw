@@ -30,7 +30,8 @@ jobs:
 
       - name: Build the book
         run: |
-          jupyter-book build .
+          # Python モジュールとして明示的に呼ぶ
+          python -m jupyter_book build .
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
