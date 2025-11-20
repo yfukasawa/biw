@@ -344,7 +344,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">復習</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">コードの参考例</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">自分の環境で実行してみる</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">自分の環境で実行してみる</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minicondapython">パッケージ管理ソフトminicondaによるPythonの導入</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">自分の環境で自分のコードを実行してみる</a></li>
 </ul>
             </nav>
         </div>
@@ -492,6 +496,23 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
+<p>こちらも<code class="docutils literal notranslate"><span class="pre">zsh:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found:</span> <span class="pre">python</span></code>となる場合は、Pythonがインストールされていないので、まずはPythonのインストールを行います。</p>
+<section id="minicondapython">
+<h3>パッケージ管理ソフトminicondaによるPythonの導入<a class="headerlink" href="#minicondapython" title="Permalink to this heading">#</a></h3>
+<p>今回はこうしたソフトウェア（パッケージとも呼びます）の管理を行うツールであるminicondaのインストールを紹介します。minicondaはパッケージと呼ばれる単位でソフトウェアを管理し、手軽にインストール/アンインストールを行う管理ツールで、非常に人気があります。</p>
+<p><a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/main">Minicondaの公式サイト</a></p>
+<p>上の公式の中に<a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions"><strong>Quick command line instyall</strong></a>というセクションがあるので、そこの指示に従ってください。</p>
+<p>macOSというタブに切り替えると、必要なステップが表示されます。</p>
+<p>ターミナルを再起動してください。うまくいけば、以下のように(base)と表示されます。</p>
+<p><img alt="Finder screen" src="_images/conda_confirmation.png" /></p>
+<p>ここまで来れば、minicondaによってPythonがインストールされているはずです。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>自分の環境で自分のコードを実行してみる<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>ファイル-&gt;ダウンロード-&gt;.pyをダウンロードで保存してみましょう。
 どこかに保存されましたか？<br />
 では、ターミナルに以下のようにpython/python3と打って、その後に<strong>半角スペース</strong>を入力してください。</p>
@@ -573,7 +594,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">復習</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">コードの参考例</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">自分の環境で実行してみる</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">自分の環境で実行してみる</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minicondapython">パッケージ管理ソフトminicondaによるPythonの導入</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">自分の環境で自分のコードを実行してみる</a></li>
 </ul>
   </nav></div>
 
