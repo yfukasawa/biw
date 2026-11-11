@@ -391,10 +391,10 @@ document.write(`
 とりあえず、やってみましょう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># bagという辞書型の配列に、重さをグラムで入れたいとします。カバンの中身はお金と、飴と、テッシュと弁当箱とします。</span>
 <span class="n">bag</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-<span class="n">bag</span><span class="p">[</span><span class="s1">&#39;money&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">120</span>
-<span class="n">bag</span><span class="p">[</span><span class="s1">&#39;candy&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">bag</span><span class="p">[</span><span class="s1">&#39;tissues&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">bag</span><span class="p">[</span><span class="s1">&#39;bento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">bag</span><span class="p">[</span><span class="s1">'money'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">bag</span><span class="p">[</span><span class="s1">'candy'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">bag</span><span class="p">[</span><span class="s1">'tissues'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">bag</span><span class="p">[</span><span class="s1">'bento'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bag</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -405,13 +405,13 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># いっぺんに書くときはこういう書き方をします。波括弧{ }で括ります。</span>
 <span class="c1"># {key: value, key: value, ....}</span>
 
-<span class="n">bag</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;money&#39;</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span> <span class="s1">&#39;candy&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;tissues&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;bento&#39;</span><span class="p">:</span> <span class="mi">300</span><span class="p">}</span>
+<span class="n">bag</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'money'</span><span class="p">:</span> <span class="mi">120</span><span class="p">,</span> <span class="s1">'candy'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'tissues'</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s1">'bento'</span><span class="p">:</span> <span class="mi">300</span><span class="p">}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bag</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>リストは数字などをゴチャゴチャっとつめこむ感じの配列ですが、一つ欠点がありどこに必要な値があるのか、毎回調べないといけません。<br />
 例えば、学校でクラスの名前を（なんらかの方法で）リストに入れたとします。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names_arabic</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mohammed&#39;</span><span class="p">,</span> <span class="s1">&#39;Mohammed&#39;</span><span class="p">,</span> <span class="s1">&#39;Fatema&#39;</span><span class="p">,</span> <span class="s1">&#39;Ikram&#39;</span><span class="p">,</span> <span class="s1">&#39;Salim&#39;</span><span class="p">,</span> <span class="s1">&#39;Mahmoot&#39;</span><span class="p">,</span> <span class="s1">&#39;Fatema&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names_arabic</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Mohammed'</span><span class="p">,</span> <span class="s1">'Mohammed'</span><span class="p">,</span> <span class="s1">'Fatema'</span><span class="p">,</span> <span class="s1">'Ikram'</span><span class="p">,</span> <span class="s1">'Salim'</span><span class="p">,</span> <span class="s1">'Mahmoot'</span><span class="p">,</span> <span class="s1">'Fatema'</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>名前はそれぞれ何回出てくるか調べたいとします。どうやって数えるか?<br />
@@ -423,13 +423,13 @@ document.write(`
 </div>
 <p>ですが、名前が何種類あるか事前には分かりません。他のクラスでは使えないでしょう。<br />
 例えば、クラスが変わったり、日本の名前に切り替わったらもう使えません。これは面倒くさい。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names_japanese</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Taro&#39;</span><span class="p">,</span> <span class="s1">&#39;Taro&#39;</span><span class="p">,</span> <span class="s1">&#39;Hanako&#39;</span><span class="p">,</span> <span class="s1">&#39;Jiro&#39;</span><span class="p">,</span> <span class="s1">&#39;Hanako&#39;</span><span class="p">,</span> <span class="s1">&#39;Jiro&#39;</span><span class="p">,</span> <span class="s1">&#39;Hanako&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names_japanese</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Taro'</span><span class="p">,</span> <span class="s1">'Taro'</span><span class="p">,</span> <span class="s1">'Hanako'</span><span class="p">,</span> <span class="s1">'Jiro'</span><span class="p">,</span> <span class="s1">'Hanako'</span><span class="p">,</span> <span class="s1">'Jiro'</span><span class="p">,</span> <span class="s1">'Hanako'</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>こういう時に辞書型は便利です。自動でコンピュータに変数を作ってもらうイメージです。<br />
 print()の中身だけ見てください。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ループと条件分岐というものを使います。来週以降に話します。</span>
-<span class="n">names_arabic</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mohammed&#39;</span><span class="p">,</span> <span class="s1">&#39;Mohammed&#39;</span><span class="p">,</span> <span class="s1">&#39;Fatema&#39;</span><span class="p">,</span> <span class="s1">&#39;Ikram&#39;</span><span class="p">,</span> <span class="s1">&#39;Salim&#39;</span><span class="p">,</span> <span class="s1">&#39;Mahmoot&#39;</span><span class="p">,</span> <span class="s1">&#39;Fatema&#39;</span><span class="p">]</span>
+<span class="n">names_arabic</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Mohammed'</span><span class="p">,</span> <span class="s1">'Mohammed'</span><span class="p">,</span> <span class="s1">'Fatema'</span><span class="p">,</span> <span class="s1">'Ikram'</span><span class="p">,</span> <span class="s1">'Salim'</span><span class="p">,</span> <span class="s1">'Mahmoot'</span><span class="p">,</span> <span class="s1">'Fatema'</span><span class="p">]</span>
 <span class="n">name_counts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names_arabic</span> <span class="p">:</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name_counts</span><span class="p">:</span> 
@@ -441,7 +441,7 @@ print()の中身だけ見てください。</p>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 違うクラスにも対応が簡単。</span>
-<span class="n">names_japanese</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Taro&#39;</span><span class="p">,</span> <span class="s1">&#39;Taro&#39;</span><span class="p">,</span> <span class="s1">&#39;Hanako&#39;</span><span class="p">,</span> <span class="s1">&#39;Jiro&#39;</span><span class="p">,</span> <span class="s1">&#39;Hanako&#39;</span><span class="p">,</span> <span class="s1">&#39;Jiro&#39;</span><span class="p">,</span> <span class="s1">&#39;Hanako&#39;</span><span class="p">]</span>
+<span class="n">names_japanese</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Taro'</span><span class="p">,</span> <span class="s1">'Taro'</span><span class="p">,</span> <span class="s1">'Hanako'</span><span class="p">,</span> <span class="s1">'Jiro'</span><span class="p">,</span> <span class="s1">'Hanako'</span><span class="p">,</span> <span class="s1">'Jiro'</span><span class="p">,</span> <span class="s1">'Hanako'</span><span class="p">]</span>
 <span class="n">name_counts</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names_japanese</span> <span class="p">:</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name_counts</span><span class="p">:</span> 
@@ -489,10 +489,10 @@ dna = {‘a’: 2, ‘t’: 2, ‘g’: 4, ‘c’: 4}</p></li>
 例えばuはdnaに存在しません。<br />
 プログラムを書くと、こういう例外的な処理をどうするかよく考えることがあります。<br />
 そういう時に、ない場合はこうしようと決めておくことをデフォルトと呼びます。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="s1">&#39;u&#39;</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1">#デフォルトの値を０としている</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1">#デフォルトの値を０としている</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'t'</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">'g'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">:</span> <span class="mi">4</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="s1">'u'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1">#デフォルトの値を０としている</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'u'</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1">#デフォルトの値を０としている</span>
 </pre></div>
 </div>
 </section>

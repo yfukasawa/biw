@@ -376,7 +376,7 @@ document.write(`
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">trials</span><span class="p">):</span>
         <span class="c1"># 親の遺伝子型（Aa型）を生成</span>
-        <span class="n">parent_genotype</span> <span class="o">=</span> <span class="s2">&quot;Aa&quot;</span>
+        <span class="n">parent_genotype</span> <span class="o">=</span> <span class="s2">"Aa"</span>
 
         <span class="c1"># 子の遺伝子型を決定</span>
         <span class="n">child_genotype</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="n">parent_genotype</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent_genotype</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
@@ -385,7 +385,7 @@ document.write(`
                                         <span class="n">parent_genotype</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">parent_genotype</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
 
         <span class="c1"># 子が顕性形質か潜性形質かを判定</span>
-        <span class="k">if</span> <span class="s1">&#39;A&#39;</span> <span class="ow">in</span> <span class="n">child_genotype</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'A'</span> <span class="ow">in</span> <span class="n">child_genotype</span><span class="p">:</span>
             <span class="n">dominant_trait</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">recessive_trait</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -405,7 +405,7 @@ document.write(`
         <span class="n">r_ratio</span> <span class="o">=</span> <span class="n">recessive_trait</span> <span class="o">/</span> <span class="n">dominant_trait</span>
         <span class="n">d_ratio</span> <span class="o">=</span><span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;顕性形質と潜性形質の割合は等しいです。&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"顕性形質と潜性形質の割合は等しいです。"</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">dominant_ratio</span><span class="p">,</span> <span class="n">recessive_ratio</span><span class="p">,</span> <span class="n">d_ratio</span><span class="p">,</span> <span class="n">r_ratio</span>
 
@@ -413,16 +413,16 @@ document.write(`
 
 
 <span class="c1"># 試行回数を指定</span>
-<span class="n">num_trials</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;試行回数を入力してください&gt;&quot;</span><span class="p">))</span>
+<span class="n">num_trials</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"試行回数を入力してください&gt;"</span><span class="p">))</span>
 
 <span class="c1"># メンデルの法則に基づいた遺伝子型の割合を計算</span>
 <span class="n">dominant_ratio</span><span class="p">,</span> <span class="n">recessive_ratio</span><span class="p">,</span> <span class="n">d_ratio</span><span class="p">,</span> <span class="n">r_ratio</span> <span class="o">=</span> <span class="n">mendel</span><span class="p">(</span><span class="n">num_trials</span><span class="p">)</span>
 
 
 <span class="c1"># 結果の表示</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;顕性形質の割合=&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dominant_ratio</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span><span class="s2">&quot;%&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;潜性形質の割合=&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recessive_ratio</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;顕性形質の割合:潜性形質の割合=&quot;</span><span class="p">,</span>  <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d_ratio</span><span class="p">),</span> <span class="s2">&quot;：&quot;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r_ratio</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"顕性形質の割合="</span><span class="p">,</span> <span class="s1">'</span><span class="si">{:.2f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dominant_ratio</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span><span class="s2">"%"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"潜性形質の割合="</span><span class="p">,</span> <span class="s1">'</span><span class="si">{:.2f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">recessive_ratio</span><span class="o">*</span><span class="mi">100</span><span class="p">),</span> <span class="s2">"%"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"顕性形質の割合:潜性形質の割合="</span><span class="p">,</span>  <span class="s1">'</span><span class="si">{:.2f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">d_ratio</span><span class="p">),</span> <span class="s2">"："</span><span class="p">,</span> <span class="s1">'</span><span class="si">{:.2f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">r_ratio</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
@@ -534,15 +534,15 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="c1"># 画像のURL</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;画像のURLをここに入力する&quot;</span>
-<span class="c1">#url = &quot;https://www.thesprucepets.com/thmb/ZaIDvU4xL65zJWUqESegtCDTv70=/2180x0/filters:no_upscale():strip_icc()/GettyImages-1019461046-7096d0b574c94d0ab320b8b9fcdd5876.jpg&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"画像のURLをここに入力する"</span>
+<span class="c1">#url = "https://www.thesprucepets.com/thmb/ZaIDvU4xL65zJWUqESegtCDTv70=/2180x0/filters:no_upscale():strip_icc()/GettyImages-1019461046-7096d0b574c94d0ab320b8b9fcdd5876.jpg"</span>
 
 <span class="c1"># 画像をダウンロード</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
 
 <span class="c1"># 元画像を表示</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;元画像&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"元画像"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -550,7 +550,7 @@ document.write(`
 <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">))</span>
 
 <span class="c1"># 画像を表示</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;リサイズ画像&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"リサイズ画像"</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>

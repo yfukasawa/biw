@@ -409,7 +409,7 @@ print(“str1はstr2より大きい”)</p>
 <p>以下を実行してみましょう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Finished."</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">range</span></code>関数はPythonのループなどでよく使います。<code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop)</span></code>でstartの数字からstopまでの
@@ -419,10 +419,10 @@ print(“str1はstr2より大きい”)</p>
 range(stop): 0 ≦ i <strong>&lt;</strong> stop</p>
 <p>forではリストの処理をよく行います。</p>
 <p>以下を実行してみましょう。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;virus&quot;</span><span class="p">,</span> <span class="s2">&quot;bacteria&quot;</span><span class="p">,</span> <span class="s2">&quot;archaea&quot;</span><span class="p">,</span> <span class="s2">&quot;amoeba&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"virus"</span><span class="p">,</span> <span class="s2">"bacteria"</span><span class="p">,</span> <span class="s2">"archaea"</span><span class="p">,</span> <span class="s2">"amoeba"</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Finished."</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">l</span></code>というリストの中身を1つずつ<code class="docutils literal notranslate"><span class="pre">name</span></code>に入れてブロックに書かれた処理を行っていきます。<br />
@@ -438,32 +438,32 @@ range(stop): 0 ≦ i <strong>&lt;</strong> stop</p>
 <p>ループを終わらせる方法の一つに<code class="docutils literal notranslate"><span class="pre">break</span></code>というものがあります。<br />
 普通に全部繰り返す必要がないときなどに使ったりします。</p>
 <p>例えばリストに”ATG”という文字列が含まれているかどうか知りたいとします。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AAG&quot;</span><span class="p">,</span> <span class="s2">&quot;ACG&quot;</span><span class="p">,</span> <span class="s2">&quot;GGG&quot;</span><span class="p">,</span> <span class="s2">&quot;GCG&quot;</span><span class="p">,</span> <span class="s2">&quot;ATG&quot;</span><span class="p">,</span> <span class="s2">&quot;TGA&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"AAG"</span><span class="p">,</span> <span class="s2">"ACG"</span><span class="p">,</span> <span class="s2">"GGG"</span><span class="p">,</span> <span class="s2">"GCG"</span><span class="p">,</span> <span class="s2">"ATG"</span><span class="p">,</span> <span class="s2">"TGA"</span><span class="p">]</span>
 <span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">for</span> <span class="n">triplet</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">triplet</span> <span class="o">==</span> <span class="s2">&quot;ATG&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">triplet</span> <span class="o">==</span> <span class="s2">"ATG"</span><span class="p">:</span>
         <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;あった&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"あった"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;なかった&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"なかった"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Finished."</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">break</span></code>を最後に入れると、場合によっては早く終わります。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AAG&quot;</span><span class="p">,</span> <span class="s2">&quot;ACG&quot;</span><span class="p">,</span> <span class="s2">&quot;GGG&quot;</span><span class="p">,</span> <span class="s2">&quot;GCG&quot;</span><span class="p">,</span> <span class="s2">&quot;ATG&quot;</span><span class="p">,</span> <span class="s2">&quot;TGA&quot;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"AAG"</span><span class="p">,</span> <span class="s2">"ACG"</span><span class="p">,</span> <span class="s2">"GGG"</span><span class="p">,</span> <span class="s2">"GCG"</span><span class="p">,</span> <span class="s2">"ATG"</span><span class="p">,</span> <span class="s2">"TGA"</span><span class="p">]</span>
 <span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">for</span> <span class="n">triplet</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">triplet</span> <span class="o">==</span> <span class="s2">&quot;ATG&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">triplet</span> <span class="o">==</span> <span class="s2">"ATG"</span><span class="p">:</span>
         <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
         <span class="k">break</span>
 
 <span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;あった&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"あった"</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;なかった&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"なかった"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Finished."</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>演習2</strong></p>
@@ -476,17 +476,17 @@ whileは条件判定をしながら、条件が<code class="docutils literal not
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
     <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Running"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Finished."</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>これで実行できますが、上と下の違いは分かるでしょうか。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
     <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Running&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Running"</span><span class="p">)</span>
     <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">-</span> <span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Finished."</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>下の方はは永遠に終わりません。いわゆるバグったコードの例になります。<br />
@@ -496,11 +496,11 @@ numが増えないのでずっと<code class="docutils literal notranslate"><spa
 <section id="input">
 <h2>input関数<a class="headerlink" href="#input" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&gt; &#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">&#39;done&#39;</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">'done'</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Finished'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>今週はここまでです。お疲れさまでした。</p>

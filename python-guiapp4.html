@@ -388,7 +388,7 @@ document.write(`
 <span class="n">canvas_height</span> <span class="o">=</span> <span class="mi">400</span>
 
 <span class="c1"># co: circle_object</span>
-<span class="n">co</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">&quot;dx&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;dy&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">co</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"x"</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">"dx"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"dy"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_circle</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">r</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -414,34 +414,34 @@ document.write(`
 
     <span class="k">def</span><span class="w"> </span><span class="nf">getRadiusValue</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">par_rad</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;debug: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">co</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"debug: </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">co</span><span class="p">[</span><span class="s2">"r"</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
 
     <span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">x</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">window_width</span><span class="p">,</span> <span class="n">window_height</span><span class="p">))</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">x</span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">window_width</span><span class="p">,</span> <span class="n">window_height</span><span class="p">))</span>
 
     <span class="c1"># Windowのタイトル</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GUI&quot;</span><span class="p">)</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"GUI"</span><span class="p">)</span>
 
-    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Programming training&quot;</span><span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Programming training"</span><span class="p">)</span>
     <span class="n">label</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># パラメータ</span>
-    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;半径&quot;</span><span class="p">)</span>
+    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"半径"</span><span class="p">)</span>
     <span class="n">label_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
     <span class="n">par_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">()</span>
     <span class="n">par_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-    <span class="n">button_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;更新&quot;</span><span class="p">)</span>
-    <span class="n">button_rad</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="n">getRadiusValue</span><span class="p">)</span> <span class="c1">## ←← ここが大事</span>
+    <span class="n">button_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"更新"</span><span class="p">)</span>
+    <span class="n">button_rad</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"&lt;Button-1&gt;"</span><span class="p">,</span> <span class="n">getRadiusValue</span><span class="p">)</span> <span class="c1">## ←← ここが大事</span>
     <span class="n">button_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-    <span class="n">canvas</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">canvas_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">canvas_height</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">canvas_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">canvas_height</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">"white"</span><span class="p">)</span>
     <span class="n">canvas</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">window_width</span><span class="o">-</span><span class="n">canvas_width</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">window_height</span><span class="o">-</span><span class="n">canvas_height</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="c1"># Create a circle</span>
-        <span class="n">circle</span> <span class="o">=</span> <span class="n">create_circle</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-        <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dx&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">move_circle</span><span class="p">(</span><span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dx&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dy&quot;</span><span class="p">])</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">create_circle</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"r"</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
+        <span class="n">co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"dx"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"dy"</span><span class="p">]</span> <span class="o">=</span> <span class="n">move_circle</span><span class="p">(</span><span class="n">co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"dx"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"dy"</span><span class="p">])</span>
 
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.04</span><span class="p">)</span>
         <span class="n">window</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
@@ -449,7 +449,7 @@ document.write(`
 
     <span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 
 </pre></div>
@@ -463,9 +463,9 @@ document.write(`
 前回つかった<code class="docutils literal notranslate"><span class="pre">.bind()</span></code>というものを再び使いましょう。マウスだとボタンにつけるのが直感的ですが、今回のキーボードの場合はウィンドウ全体を操作したいので<code class="docutils literal notranslate"><span class="pre">window</span></code>に<code class="docutils literal notranslate"><span class="pre">.bind()</span></code>します。<br />
 ここで、<code class="docutils literal notranslate"><span class="pre">window</span></code>とはTk()という関数で作った変数のことです(参考例: <code class="docutils literal notranslate"><span class="pre">window</span> <span class="pre">=</span> <span class="pre">tk.Tk()</span></code>)。</p>
 <p><code class="docutils literal notranslate"><span class="pre">&lt;KeyPress&gt;</span></code>というパラメータをbind()に与えると、任意(特定のものではない、という意味です)のキー入力でkey_input()という関数を呼び出せるようにします。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GUI&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"GUI"</span><span class="p">)</span>
     <span class="c1"># キー入力</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;KeyPress&gt;&quot;</span><span class="p">,</span> <span class="n">key_input</span><span class="p">)</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"&lt;KeyPress&gt;"</span><span class="p">,</span> <span class="n">key_input</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">key_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -496,8 +496,8 @@ Pythonでは、TrueとFalseを用います。</p>
 <p>続いて、動作を止めるにはどうするべきか考えましょう。1つのやり方はボールのパラメータを変更することだと言えます。
 この場合、止める直前のパラメータを保持しておく必要があるので、<strong>t_co</strong>という変数を作ってみましょう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># co: circle_object
-co = { &quot;x&quot;: 350, &quot;y&quot;: 250, &quot;dx&quot;: 10, &quot;dy&quot;: 10, &quot;r&quot;: 5}
-t_co = {&quot;x&quot;: 0, &quot;y&quot;: 0, &quot;dx&quot;: 0, &quot;dy&quot;: 0, &quot;r&quot;: 0}
+co = { "x": 350, "y": 250, "dx": 10, "dy": 10, "r": 5}
+t_co = {"x": 0, "y": 0, "dx": 0, "dy": 0, "r": 0}
 
 def stop_and_go():
     global is_stopped
@@ -509,12 +509,12 @@ def stop_and_go():
         is_stopped = True
         for x in co:
             t_co[x] = co[x]
-        co[&quot;dx&quot;] = co[&quot;dy&quot;] = ??
+        co["dx"] = co["dy"] = ??
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def key_input(event):
     if event.keysym == ??:
-        print(&quot;debug: space key is hit.&quot;)
+        print("debug: space key is hit.")
         stop_and_go()
 </pre></div>
 </div>
@@ -537,23 +537,23 @@ def stop_and_go():
     <span class="k">global</span> <span class="n">co</span><span class="p">,</span> <span class="n">t_co</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">is_stopped</span><span class="p">:</span>
         <span class="k">return</span>
-    <span class="n">_x</span> <span class="o">=</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span>
-    <span class="n">_y</span> <span class="o">=</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">_x</span> <span class="o">=</span> <span class="n">co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">]</span> <span class="o">+</span> <span class="n">a</span>
+    <span class="n">_y</span> <span class="o">=</span> <span class="n">co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span>
     <span class="k">if</span> <span class="n">_x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">_x</span> <span class="o">&gt;</span> <span class="n">canvas_width</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">if</span> <span class="n">_y</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">_y</span> <span class="o">&gt;</span> <span class="n">canvas_height</span><span class="p">:</span>
         <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
     
-    <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>   <span class="o">+=</span> <span class="n">a</span>
-    <span class="n">t_co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span>
-    <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>   <span class="o">+=</span> <span class="n">b</span>
-    <span class="n">t_co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">b</span>
+    <span class="n">co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">]</span>   <span class="o">+=</span> <span class="n">a</span>
+    <span class="n">t_co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span>
+    <span class="n">co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span>   <span class="o">+=</span> <span class="n">b</span>
+    <span class="n">t_co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">]</span> <span class="o">+=</span> <span class="n">b</span>
 </pre></div>
 </div>
 <p>このままだとキーボードに反応しないので、key_input()からmove_circle()を呼び出すようにしてください。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def key_input(event):
-    print(&quot;debug: %s is hit.&quot; % event.keysym)
-    if event.keysym == &quot;space&quot;:
+    print("debug: %s is hit." % event.keysym)
+    if event.keysym == "space":
         stop_and_go()
     elif event.keysym==??:
         move_circle_key(??, ??)

@@ -385,7 +385,7 @@ document.write(`
 <li><p>ターミナルを開いてください。</p></li>
 <li><p>以下のコマンド(curlで始まる行とbashで始まる行の2行です)をそれぞれ１行ずつ実行してください。</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>curl -L -O &quot;https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh&quot;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 
 bash Miniforge3-$(uname)-$(uname -m).sh
 </pre></div>
@@ -412,7 +412,7 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 <span class="n">canvas_height</span> <span class="o">=</span> <span class="mi">400</span>
 
 <span class="c1"># co: circle_object</span>
-<span class="n">co</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">&quot;dx&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;dy&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+<span class="n">co</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"x"</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="mi">250</span><span class="p">,</span> <span class="s2">"dx"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"dy"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">create_circle</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">canvas</span><span class="o">.</span><span class="n">create_oval</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="n">r</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">r</span><span class="p">,</span> <span class="n">y</span><span class="o">+</span><span class="n">r</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -436,21 +436,21 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 
 <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">x</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">window_width</span><span class="p">,</span> <span class="n">window_height</span><span class="p">))</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">x</span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">window_width</span><span class="p">,</span> <span class="n">window_height</span><span class="p">))</span>
 
     <span class="c1"># Windowのタイトル</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;GUI&quot;</span><span class="p">)</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"GUI"</span><span class="p">)</span>
 
-    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Programming training&quot;</span><span class="p">)</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Programming training"</span><span class="p">)</span>
     <span class="n">label</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-    <span class="n">canvas</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">canvas_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">canvas_height</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+    <span class="n">canvas</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Canvas</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">canvas_width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">canvas_height</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">"white"</span><span class="p">)</span>
     <span class="n">canvas</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">window_width</span><span class="o">-</span><span class="n">canvas_width</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="p">(</span><span class="n">window_height</span><span class="o">-</span><span class="n">canvas_height</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="c1"># Create a circle</span>
-        <span class="n">circle</span> <span class="o">=</span> <span class="n">create_circle</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-        <span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dx&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">move_circle</span><span class="p">(</span><span class="n">co</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dx&quot;</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">&quot;dy&quot;</span><span class="p">])</span>
+        <span class="n">circle</span> <span class="o">=</span> <span class="n">create_circle</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"r"</span><span class="p">],</span> <span class="n">fill</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
+        <span class="n">co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"dx"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"dy"</span><span class="p">]</span> <span class="o">=</span> <span class="n">move_circle</span><span class="p">(</span><span class="n">co</span><span class="p">[</span><span class="s2">"x"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"y"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"dx"</span><span class="p">],</span> <span class="n">co</span><span class="p">[</span><span class="s2">"dy"</span><span class="p">])</span>
 
         <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.04</span><span class="p">)</span>
         <span class="n">window</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
@@ -459,7 +459,7 @@ bash Miniforge3-$(uname)-$(uname -m).sh
     <span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 
 </pre></div>
@@ -469,11 +469,11 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 <h2>色々なGUIパーツの表示<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>ラベル、テキストフィールドというものを配置してみましょう。<br />
 ラベルは使いましたが、テキストフィールドは初めてですね。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Programming training&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Programming training"</span><span class="p">)</span>
     <span class="n">label</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># パラメータ</span>
-    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;半径&quot;</span><span class="p">)</span>
+    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"半径"</span><span class="p">)</span>
     <span class="n">label_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">par_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">()</span>
     <span class="n">par_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -492,15 +492,15 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 値を入力するためのフィールド(白いボックス)以外に、何が必要でしょうか？</p>
 <p>こういう時は、１つはボタンを使います。<br />
 ボタンを配置してみましょう。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Programming training&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Programming training"</span><span class="p">)</span>
     <span class="n">label</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># パラメータ</span>
-    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;半径&quot;</span><span class="p">)</span>
+    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"半径"</span><span class="p">)</span>
     <span class="n">label_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">par_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">()</span>
     <span class="n">par_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">button_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;更新&quot;</span><span class="p">)</span>
+    <span class="n">button_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"更新"</span><span class="p">)</span>
     <span class="n">button_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -522,28 +522,28 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 
     <span class="k">def</span><span class="w"> </span><span class="nf">getRadiusValue</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">par_rad</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;debug: </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">r</span><span class="p">)</span>
-        <span class="n">co</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"debug: </span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="n">r</span><span class="p">)</span>
+        <span class="n">co</span><span class="p">[</span><span class="s2">"r"</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
 
     <span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">x</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">window_width</span><span class="p">,</span> <span class="n">window_height</span><span class="p">))</span>
-    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;700x500&quot;</span><span class="p">)</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">x</span><span class="si">%d</span><span class="s2">"</span> <span class="o">%</span> <span class="p">(</span><span class="n">window_width</span><span class="p">,</span> <span class="n">window_height</span><span class="p">))</span>
+    <span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"700x500"</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>ただ、このままだと、動きません。<code class="docutils literal notranslate"><span class="pre">getRadiusValue()</span></code>が動かないからです。<br />
 ボタンが押されたら上のgetRadiusValue()が呼ばれるようにしたいので、少しだけ書き足します。</p>
 <p><code class="docutils literal notranslate"><span class="pre">.bind()</span></code></p>
 <p>ボタンに対して上を定義しておくと、アクションが起きた時に(クリックなど)関数を呼ぶように出来ます。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Programming training&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">"Programming training"</span><span class="p">)</span>
     <span class="n">label</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
     <span class="c1"># パラメータ</span>
-    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;半径&quot;</span><span class="p">)</span>
+    <span class="n">label_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"半径"</span><span class="p">)</span>
     <span class="n">label_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     <span class="n">par_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">()</span>
     <span class="n">par_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">button_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;更新&quot;</span><span class="p">)</span>
-    <span class="n">button_rad</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="n">getRadiusValue</span><span class="p">)</span> <span class="c1">## ←← ここが大事</span>
+    <span class="n">button_rad</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">"更新"</span><span class="p">)</span>
+    <span class="n">button_rad</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"&lt;Button-1&gt;"</span><span class="p">,</span> <span class="n">getRadiusValue</span><span class="p">)</span> <span class="c1">## ←← ここが大事</span>
     <span class="n">button_rad</span><span class="o">.</span><span class="n">place</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>

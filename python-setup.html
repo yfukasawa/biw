@@ -368,11 +368,11 @@ document.write(`
 <section id="conda">
 <h2>condaのインストール方法<a class="headerlink" href="#conda" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span></code>の中にもいくつか種類があり、最近有償化したりしているので、無償で提供されているminiforge版とよばれる<code class="docutils literal notranslate"><span class="pre">conda</span></code>を紹介します。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">O</span> <span class="s2">&quot;https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">O</span> <span class="s2">"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</span>
 </pre></div>
 </div>
 <p>もしくは</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="s2">&quot;https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wget</span> <span class="s2">"https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"</span>
 </pre></div>
 </div>
 <p>１つめの<code class="docutils literal notranslate"><span class="pre">curl</span></code>で始まる行をターミナルにコピーし、もし失敗した場合は<code class="docutils literal notranslate"><span class="pre">wget</span></code>で試してみてください。どちらでも同じですが、環境によっては失敗するかもしれないので、２つ書いておきます。</p>

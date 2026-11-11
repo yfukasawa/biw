@@ -386,13 +386,13 @@ document.write(`
 </section>
 <section id="id3">
 <h2>遺伝子配列ファイルの読み込み<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ファイルの場所&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"ファイルの場所"</span><span class="p">)</span>
 <span class="n">file_handle</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>ファイルをプログラムで開くのはこれだけですが、これだと何もしていないので何も起きません。
 1行ずつ読んで行数を数えてみましょう。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;R9WNI0.fasta&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"R9WNI0.fasta"</span><span class="p">)</span>
 
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">file_handle</span><span class="p">:</span>
@@ -419,7 +419,7 @@ document.write(`
 <h2>表データの読み込み<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>実際の社会や研究ではエクセルのような表形式のデータを扱うことが大変多いです。
 これをコンピュータで処理することは便利なので覚えてみましょう。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;c01.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;cp932&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"c01.csv"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'cp932'</span><span class="p">)</span>
 
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">file_handle</span><span class="p">:</span>
@@ -455,26 +455,26 @@ document.write(`
 以下のコードで、変数に整数とし入れる処理を完成させてください。</p>
 <p>?の部分を置き換えてみてください。</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>file_handle = open(&quot;c01.csv&quot;, encoding=&#39;cp932&#39;)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>file_handle = open("c01.csv", encoding='cp932')
 
 count = 0
 total = 0
 for l in file_handle:
     line = l.rstrip()
     count = count + 1
-    retsu = line.split(&quot;,&quot;)
+    retsu = line.split(",")
     if len(retsu) != 9:
         continue
     total_moji = retsu[?]
     #print(total_moji)
-    if &quot;人口&quot; in total_moji or &quot;-&quot; in total_moji:
+    if "人口" in total_moji or "-" in total_moji:
         continue
     total_num  = ???(total_moji)
     total = total + total_num
 file_handle.close()
 
-print(&quot;人口の総和: %d&quot; % total)
-print(&quot;行数: %d&quot; % count)
+print("人口の総和: %d" % total)
+print("行数: %d" % count)
 </pre></div>
 </div>
 </section>

@@ -373,26 +373,26 @@ document.write(`
 以下のコードで、変数に整数とし入れる処理を完成させてください。</p>
 <p>?の部分を置き換えてみてください。</p>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>file_handle = open(&quot;c01.csv&quot;, encoding=&#39;cp932&#39;)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>file_handle = open("c01.csv", encoding='cp932')
 
 count = 0
 total = 0
 for l in file_handle:
     line = l.rstrip()
     count = count + 1
-    retsu = line.split(&quot;,&quot;)
+    retsu = line.split(",")
     if len(retsu) != 9:
         continue
     total_moji = retsu[?]
     #print(total_moji)
-    if &quot;人口&quot; in total_moji or &quot;-&quot; in total_moji:
+    if "人口" in total_moji or "-" in total_moji:
         continue
     total_num  = ???(total_moji)
     total = total + total_num
 file_handle.close()
 
-print(&quot;人口の総和: %d&quot; % total)
-print(&quot;行数: %d&quot; % count)
+print("人口の総和: %d" % total)
+print("行数: %d" % count)
 </pre></div>
 </div>
 <p>埋められましたか？</p>
@@ -442,7 +442,7 @@ HTMLと呼ばれるもので、こういった基本的な技術がGoogleなど�
     <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="n">ページのタイトル</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
   <span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
   <span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
-    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">&quot;https://bix-uu.sakura.ne.jp/logo.png&quot;</span> <span class="n">alt</span><span class="o">=</span><span class="s2">&quot;ロゴ&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s2">"https://bix-uu.sakura.ne.jp/logo.png"</span> <span class="n">alt</span><span class="o">=</span><span class="s2">"ロゴ"</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">見出し1</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">段落1</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span><span class="n">見出し2</span><span class="o">&lt;/</span><span class="n">h2</span><span class="o">&gt;</span>
@@ -470,8 +470,8 @@ HTMLと呼ばれるもので、こういった基本的な技術がGoogleなど�
 <h2>ブラウザではなくPythonで行う<a class="headerlink" href="#python" title="Permalink to this heading">#</a></h2>
 <p>上のようなGET通信はブラウザだけではなくPythonでもできます。やってみましょう。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://qiita.com/&quot;</span>
-<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;q&quot;</span> <span class="p">:</span> <span class="s2">&quot;html&quot;</span> <span class="p">}</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">"https://qiita.com/"</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"q"</span> <span class="p">:</span> <span class="s2">"html"</span> <span class="p">}</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">parameters</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 </pre></div>
@@ -496,10 +496,10 @@ HTMLと呼ばれるもので、こういった基本的な技術がGoogleなど�
 <ol class="arabic simple" start="3">
 <li><p>これをresponce.htmlというファイルに保存してください。</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;responce.html&quot;</span>
-<span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">"responce.html"</span>
+<span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span>
 <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -511,21 +511,21 @@ HTMLと呼ばれるもので、こういった基本的な技術がGoogleなど�
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_address_from_postal_code</span><span class="p">(</span><span class="n">postal_code</span><span class="p">):</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;http://zipcloud.ibsnet.co.jp/api/search?zipcode=</span><span class="si">{</span><span class="n">postal_code</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">'http://zipcloud.ibsnet.co.jp/api/search?zipcode=</span><span class="si">{</span><span class="n">postal_code</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 
-    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-          <span class="k">return</span> <span class="s2">&quot;Invalid postal code&quot;</span>
-        <span class="n">address_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">address_data</span><span class="p">[</span><span class="s1">&#39;address1&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">address_data</span><span class="p">[</span><span class="s1">&#39;address2&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">address_data</span><span class="p">[</span><span class="s1">&#39;address3&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">'status'</span><span class="p">]</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="s1">'results'</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+          <span class="k">return</span> <span class="s2">"Invalid postal code"</span>
+        <span class="n">address_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">'results'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">address_data</span><span class="p">[</span><span class="s1">'address1'</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">address_data</span><span class="p">[</span><span class="s1">'address2'</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">address_data</span><span class="p">[</span><span class="s1">'address3'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="s2">&quot;Invalid postal code&quot;</span>
+        <span class="k">return</span> <span class="s2">"Invalid postal code"</span>
 
 <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;&gt; &#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">&#39;done&#39;</span><span class="p">:</span>
+    <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">'done'</span><span class="p">:</span>
         <span class="k">break</span>
     <span class="n">address</span> <span class="o">=</span> <span class="n">get_address_from_postal_code</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
@@ -533,7 +533,7 @@ HTMLと呼ばれるもので、こういった基本的な技術がGoogleなど�
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Finished'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>今週はここまでです。お疲れさまでした。</p>
