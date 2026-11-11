@@ -343,11 +343,13 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">復習</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">自分の欲しいプロダクトをAIと作る</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection">Collection</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">辞書</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">リストと配列の違いを感じる</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key">辞書にkeyがないとき</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">タプル</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">発表: 作りたいプロダクト</a></li>
 </ul>
             </nav>
         </div>
@@ -374,6 +376,24 @@ document.write(`
 <span class="c1"># 2.5というｔ値を持つ場所(index)を得るためのコード</span>
 </pre></div>
 </div>
+</section>
+<section id="ai">
+<h2>自分の欲しいプロダクトをAIと作る<a class="headerlink" href="#ai" title="Permalink to this heading">#</a></h2>
+<p>今週から、文法の学習と並行して<strong>自分が本当に欲しいもの(プロダクト)をAIと一緒に作る</strong>取り組みを始めます。</p>
+<p>なぜこうするのか。理由は3つあります。</p>
+<ol class="arabic simple">
+<li><p><strong>目的があると文法が身につく</strong><br />
+文法だけを順番に覚えても、使い道が見えないとすぐに忘れます。「これを作りたいから辞書が要る」「ここで条件分岐が要る」という順番で出会った文法は残ります。</p></li>
+<li><p><strong>AIがあれば、初心者でも動くものが作れる</strong><br />
+今はAIにコードを書いてもらうことができます。そのため、作れるものの大きさは文法の知識だけでは決まりません。</p></li>
+<li><p><strong>ただし、AIの出力を判断できるのは自分だけ</strong><br />
+AIが出したコードが正しいか、自分の欲しいものになっているかを判断するには、文法の理解が必要です。冒頭でも書いたように、依存ではなく<strong>使いこなす</strong>ことを目指します。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>立派なものである必要はありません。研究の作業を楽にするツール、趣味の記録アプリ、生活の困りごとを解決するものなど、<strong>自分が使いたいもの</strong>であることが一番大事です。</p>
+</div>
+<p>今日の最後に、一人ずつ発表してもらいます。授業を受けながら、下の項目を考えておいてください。</p>
 </section>
 <section id="collection">
 <h2>Collection<a class="headerlink" href="#collection" title="Permalink to this heading">#</a></h2>
@@ -521,6 +541,24 @@ num_list[ ] = -4</p></li>
 <li><p>num_tupleで同じように-4に入れ替えようとしてみてください。<br />
 num_tuple[ ] = -4</p></li>
 </ol>
+</section>
+<section id="id5">
+<h2>発表: 作りたいプロダクト<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>一人1〜2分で、作りたいものを発表してください。今日学んだ辞書で書き出してから話すと整理しやすいです。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_product</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'name'</span><span class="p">:</span> <span class="s1">'仮の名前'</span><span class="p">,</span>
+    <span class="s1">'what'</span><span class="p">:</span> <span class="s1">'どんなものか(一言で)'</span><span class="p">,</span>
+    <span class="s1">'why'</span><span class="p">:</span> <span class="s1">'なぜ欲しいのか(今どんなことに困っているか)'</span><span class="p">,</span>
+    <span class="s1">'who'</span><span class="p">:</span> <span class="s1">'誰が使うか(自分? 研究室? 家族?)'</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_product</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>アイデアが浮かばない人は、AIに「大学生です。日常や研究で困っていることを解決するPythonのアプリのアイデアを10個出してください」などと聞いてみましょう。ただし、その中から<strong>自分が欲しいもの</strong>を選ぶのは自分です。</p>
+</div>
+<p>聞く側は、他の人の発表で「それ、自分も欲しい」と思ったものをメモしておいてください。来週はこのアイデアの<strong>スコープを絞る</strong>作業をします。</p>
 <p>今週はここまでです。お疲れさまでした。</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -599,11 +637,13 @@ bag = {‘money’: 120, ‘candy’: 3, ‘tissues’:10}</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">復習</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">自分の欲しいプロダクトをAIと作る</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collection">Collection</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">辞書</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">リストと配列の違いを感じる</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key">辞書にkeyがないとき</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">タプル</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">発表: 作りたいプロダクト</a></li>
 </ul>
   </nav></div>
 

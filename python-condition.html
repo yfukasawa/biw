@@ -349,7 +349,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">インデント</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">もう少し複雑な条件分岐</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">演習</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">宿題</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">プロダクト: 作るものの範囲を決める</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">宿題</a></li>
 </ul>
             </nav>
         </div>
@@ -687,7 +688,85 @@ age に代入する数値は任意の自然数とします。</p>
 </ul>
 </section>
 <section id="id8">
-<h2>宿題<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2>プロダクト: 作るものの範囲を決める<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<p>先週、作りたいプロダクトを発表してもらいました。今週はそのアイデアの<strong>範囲を絞り</strong>ます。</p>
+<p>AIと作り始めると「あれもこれも」と機能を増やしたくなります。実際のところ、高知能な大規模生成モデルを使うと可能です。
+ただ、欲しい機能を全部AIに頼むと、コードが大きくなりすぎて<strong>自分で読めなくなり</strong>、どこが壊れているのかもわからなくなります。<strong>どこまで詳しくかは人によりますが、自分のコードは必ず自分で説明できなくてはなりません。</strong>
+そこで、<strong>一番小さい、でも使える形</strong>を決めることが、完成させるための一番のコツです。</p>
+<p>次の3つを決めてください。</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>考えること</p></th>
+<th class="head"><p>悪い例 → 良い例</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ユーザーの具体像</p></td>
+<td><p>誰が使うか。具体的な人物像に絞る</p></td>
+<td><p>ラボの人 → 研究室で毎日実験ノートを書く自分</p></td>
+</tr>
+<tr class="row-odd"><td><p>解決する課題</p></td>
+<td><p>その人の何が、どう困っているか</p></td>
+<td><p>便利にしたい → 試薬の在庫がわからず、実験当日に足りないことがある</p></td>
+</tr>
+<tr class="row-even"><td><p>必須機能</p></td>
+<td><p>それがないと課題が解決しない機能。<strong>最初は3つまで</strong></p></td>
+<td><p>ログイン、グラフ、通知、共有… → 在庫の登録、在庫の確認、少なくなったら知らせる</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>「あったら嬉しい」機能は消すのではなく、別のメモに移しておきましょう。必須機能が動いてから追加すれば良いのです。</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 今日学んだ条件分岐で、自分のスコープ（範囲）を点検してみましょう。</span>
+<span class="c1"># ''の中を自分のプロダクトの内容に書き換えてください。使わない欄は''のままで構いません。</span>
+<span class="n">scope</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'target_user'</span><span class="p">:</span> <span class="s1">'研究室で毎日実験ノートを書く自分'</span><span class="p">,</span>
+    <span class="s1">'problem'</span><span class="p">:</span> <span class="s1">'試薬の在庫がわからず、実験当日に足りないことがある'</span><span class="p">,</span>
+    <span class="s1">'must1'</span><span class="p">:</span> <span class="s1">'在庫の登録'</span><span class="p">,</span>
+    <span class="s1">'must2'</span><span class="p">:</span> <span class="s1">'在庫の確認'</span><span class="p">,</span>
+    <span class="s1">'must3'</span><span class="p">:</span> <span class="s1">'少なくなったら知らせる'</span><span class="p">,</span>
+    <span class="s1">'must4'</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">if</span> <span class="n">scope</span><span class="p">[</span><span class="s1">'target_user'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">''</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'ターゲットユーザーが決まっていません'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">scope</span><span class="p">[</span><span class="s1">'problem'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">''</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'解決する課題が決まっていません'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">scope</span><span class="p">[</span><span class="s1">'must1'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">''</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'必須機能が1つもありません'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">scope</span><span class="p">[</span><span class="s1">'must4'</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'必須機能が多すぎます。3つまでに絞りましょう'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'絞り込みOK! この3つから作り始めましょう'</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>絞り込みOK! この3つから作り始めましょう
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>演習</strong></p>
+<ol class="arabic simple">
+<li><p>上の<code class="docutils literal notranslate"><span class="pre">scope</span></code>を自分のプロダクトの内容に書き換えて、<code class="docutils literal notranslate"><span class="pre">絞り込みOK!</span></code>と表示されるようにしてください。</p></li>
+<li><p>決めた内容をAIに見せて「この必須機能で、この課題は解決できますか? 足りないもの、不要なものはありますか?」と聞いてみてください。</p></li>
+<li><p>AIの意見をそのまま採用するのではなく、<strong>自分で判断して</strong><code class="docutils literal notranslate"><span class="pre">scope</span></code>を修正してください。</p></li>
+<li><p>隣の人と見せ合い、ターゲットユーザーと課題が具体的になっているか確認してください。</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ここで書いた<code class="docutils literal notranslate"><span class="pre">scope</span></code>は来週以降も使います。自分のノートに保存しておいてください。</p>
+</div>
+</section>
+<section id="id9">
+<h2>宿題<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Pythonで文字列を比較する方法を調べてきて、紹介してください。
@@ -767,7 +846,8 @@ age に代入する数値は任意の自然数とします。</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">インデント</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">もう少し複雑な条件分岐</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">演習</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">宿題</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">プロダクト: 作るものの範囲を決める</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">宿題</a></li>
 </ul>
   </nav></div>
 
