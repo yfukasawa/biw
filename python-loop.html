@@ -345,9 +345,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">復習</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-and-iteration">Loop and Iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for">for文</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">数えるループ</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break">break文</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while">while</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">input関数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">AIと一緒に書く: 予測してから実行する</a></li>
 </ul>
             </nav>
         </div>
@@ -366,33 +367,9 @@ document.write(`
 <h2>復習<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Pythonで文字列を比較する方法を調べてきて、紹介してください。</p>
+<p>先週決めた<code class="docutils literal notranslate"><span class="pre">scope</span></code>(ユーザーの具体像、解決する課題、必須機能3つ)を、1人1分程度で発表してください。</p>
 </div>
 <p>発表を願いします。</p>
-<div class="toggle docutils container">
-<p class="rubric">AI-generated code. Review and use carefully.</p>
-<p class="rubric">完全一致の判定</p>
-<p>str1 = “Python”
-str2 = “Python”
-if str1 == str2:
-print(“文字列は等しい”)
-else:
-print(“文字列は等しくない”)</p>
-<p class="rubric">部分文字列の検索</p>
-<p>str1 = “Python”
-str2 = “I love Python”
-if str1 in str2:
-print(“str1はstr2の中に存在する”)
-else:
-print(“str1はstr2の中に存在しない”)</p>
-<p class="rubric">大小の比較</p>
-<p>str1 = “Apple”
-str2 = “Banana”
-if str1 &lt; str2:
-print(“str1はstr2より小さい”)
-else:
-print(“str1はstr2より大きい”)</p>
-</div>
 </section>
 <section id="loop-and-iteration">
 <h2>Loop and Iteration<a class="headerlink" href="#loop-and-iteration" title="Permalink to this heading">#</a></h2>
@@ -431,42 +408,50 @@ range(stop): 0 ≦ i <strong>&lt;</strong> stop</p>
 <ol class="arabic simple">
 <li><p>新しいリストを作成しましょう。</p></li>
 <li><p>forループで中身を１つずつ表示させてください。</p></li>
+<li><p>自分のプロダクトで「繰り返したい処理」は何でしょうか。1行で書いてみてください。</p></li>
+</ol>
+</section>
+<section id="id2">
+<h2>数えるループ<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>ループと条件分岐(<code class="docutils literal notranslate"><span class="pre">if</span></code>)を組み合わせると、<strong>条件に合うものがいくつあるか数える</strong>ことができます。<br />
+プロダクトでも「足りない試薬が何件あるか」のように、数える処理はよく使います。</p>
+<p>リストの中に”ATG”がいくつあるか数えてみましょう。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"AAG"</span><span class="p">,</span> <span class="s2">"ACG"</span><span class="p">,</span> <span class="s2">"GGG"</span><span class="p">,</span> <span class="s2">"GCG"</span><span class="p">,</span> <span class="s2">"ATG"</span><span class="p">,</span> <span class="s2">"TGA"</span><span class="p">,</span> <span class="s2">"ATG"</span><span class="p">]</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">triplet</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">triplet</span> <span class="o">==</span> <span class="s2">"ATG"</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>次の3つの順番がポイントです。</p>
+<ol class="arabic simple">
+<li><p>ループの<strong>前</strong>に、数える変数を<code class="docutils literal notranslate"><span class="pre">0</span></code>で用意する(<code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">=</span> <span class="pre">0</span></code>)</p></li>
+<li><p>ループの<strong>中</strong>で、条件に合うたびに<code class="docutils literal notranslate"><span class="pre">1</span></code>増やす(<code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">=</span> <span class="pre">count</span> <span class="pre">+</span> <span class="pre">1</span></code>)</p></li>
+<li><p>ループの<strong>後</strong>で、結果を使う(<code class="docutils literal notranslate"><span class="pre">print(count)</span></code>)</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">print(count)</span></code>のインデントを<code class="docutils literal notranslate"><span class="pre">for</span></code>と同じ位置にしている点にも注目してください。<br />
+ループの中に入れると、どうなるでしょうか。実際に試して確認しましょう。</p>
+<p><strong>演習2</strong></p>
+<ol class="arabic simple">
+<li><p>上のリストで、<code class="docutils literal notranslate"><span class="pre">G</span></code>を含むトリプレットがいくつあるか数えてください。(ヒント: <code class="docutils literal notranslate"><span class="pre">&quot;G&quot;</span> <span class="pre">in</span> <span class="pre">triplet</span></code>)</p></li>
+<li><p>自分のプロダクトで使うデータを、リストとして書いてみましょう。その中で「数えたいもの」を数えるコードを書いてください。</p></li>
 </ol>
 </section>
 <section id="break">
 <h2>break文<a class="headerlink" href="#break" title="Permalink to this heading">#</a></h2>
 <p>ループを終わらせる方法の一つに<code class="docutils literal notranslate"><span class="pre">break</span></code>というものがあります。<br />
 普通に全部繰り返す必要がないときなどに使ったりします。</p>
-<p>例えばリストに”ATG”という文字列が含まれているかどうか知りたいとします。</p>
+<p>例えばリストに”ATG”という文字列が含まれているかどうか知りたいとします。見つかった時点で、以降を調べる必要はありません。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"AAG"</span><span class="p">,</span> <span class="s2">"ACG"</span><span class="p">,</span> <span class="s2">"GGG"</span><span class="p">,</span> <span class="s2">"GCG"</span><span class="p">,</span> <span class="s2">"ATG"</span><span class="p">,</span> <span class="s2">"TGA"</span><span class="p">]</span>
-<span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">for</span> <span class="n">triplet</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">triplet</span> <span class="o">==</span> <span class="s2">"ATG"</span><span class="p">:</span>
-        <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"あった"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"なかった"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Finished."</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">break</span></code>を最後に入れると、場合によっては早く終わります。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"AAG"</span><span class="p">,</span> <span class="s2">"ACG"</span><span class="p">,</span> <span class="s2">"GGG"</span><span class="p">,</span> <span class="s2">"GCG"</span><span class="p">,</span> <span class="s2">"ATG"</span><span class="p">,</span> <span class="s2">"TGA"</span><span class="p">]</span>
-<span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="k">for</span> <span class="n">triplet</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">triplet</span> <span class="o">==</span> <span class="s2">"ATG"</span><span class="p">:</span>
-        <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"あった"</span><span class="p">)</span>
         <span class="k">break</span>
-
-<span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"あった"</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"なかった"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"Finished."</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>演習2</strong></p>
+<p><strong>演習3</strong></p>
 <p>先程の演習1で作ったループを<code class="docutils literal notranslate"><span class="pre">if</span></code>の条件分岐と<code class="docutils literal notranslate"><span class="pre">break</span></code>文を使って早く終わらせてみてください。</p>
 </section>
 <section id="while">
@@ -492,22 +477,31 @@ whileは条件判定をしながら、条件が<code class="docutils literal not
 <p>下の方はは永遠に終わりません。いわゆるバグったコードの例になります。<br />
 numが増えないのでずっと<code class="docutils literal notranslate"><span class="pre">while</span></code>が実行されます。</p>
 <p>こういうものもあると覚えておいていただければ今はいいです。</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>プログラムが終わらなくなったときは、ターミナルで<code class="docutils literal notranslate"><span class="pre">Ctrl</span> <span class="pre">+</span> <span class="pre">C</span></code>を押すと止められます。</p>
+</div>
 </section>
-<section id="input">
-<h2>input関数<a class="headerlink" href="#input" title="Permalink to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'&gt; '</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">line</span> <span class="o">==</span> <span class="s1">'done'</span><span class="p">:</span>
-        <span class="k">break</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Finished'</span><span class="p">)</span>
-</pre></div>
+<section id="ai">
+<h2>AIと一緒に書く: 予測してから実行する<a class="headerlink" href="#ai" title="Permalink to this heading">#</a></h2>
+<p>AIにループのコードを書いてもらうことは簡単です。しかし、<strong>出力を予測できないコードは、自分で説明できません</strong>。<br />
+次の手順で、AIのコードを自分のものにしましょう。</p>
+<ol class="arabic simple">
+<li><p>自分のプロダクトで使うデータ(リストか辞書)をAIに見せて、「この中の〇〇を数えるPythonコードを書いてください」と頼む</p></li>
+<li><p><strong>実行する前に</strong>、出力がどうなるかを予測して書いておく</p></li>
+<li><p>実行して、予測と比べる</p></li>
+<li><p>違っていたら、どの行の理解が違っていたのかを考える</p></li>
+<li><p>全ての行を、自分の言葉で説明できるか確認する</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>AIが書くコードには、今日学んでいない書き方が含まれることがあります。わからない行は、そのままにせずAIに質問しましょう。</p>
 </div>
 <p>今週はここまでです。お疲れさまでした。</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>上のプログラムは<code class="docutils literal notranslate"><span class="pre">input</span></code>関数と<code class="docutils literal notranslate"><span class="pre">while</span></code>ループと変数を使っています。<br />
-これに加えてリストを使うように改造して、何か小さいプログラムをひとつ作ってきてください。<br />
+<p>自分のプロダクトで使うデータを、リストか辞書としてコードに直接書き、ループで「数える」プログラムを作ってきてください。<br />
+AIを使っても構いませんが、<strong>全ての行を自分で説明できる</strong>ようにしてください。<br />
 来週のこの時間で発表してもらいたいと思います。</p>
 </div>
 </section>
@@ -580,9 +574,10 @@ numが増えないのでずっと<code class="docutils literal notranslate"><spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">復習</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-and-iteration">Loop and Iteration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for">for文</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">数えるループ</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break">break文</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while">while</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input">input関数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">AIと一緒に書く: 予測してから実行する</a></li>
 </ul>
   </nav></div>
 
