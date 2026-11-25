@@ -367,8 +367,8 @@ document.write(`
 <h2>復習<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>上のプログラムは<code class="docutils literal notranslate"><span class="pre">input</span></code>関数と<code class="docutils literal notranslate"><span class="pre">while</span></code>ループと変数を使っています。<br />
-これに加えてリストを使うように改造して、何か小さいプログラムをひとつ作ってきてください。<br />
+<p>自分のプロダクトで使うデータを、リストか辞書としてコードに直接書き、ループで「数える」プログラムを作ってきてください。<br />
+AIを使っても構いませんが、<strong>全ての行を自分で説明できる</strong>ようにしてください。<br />
 来週のこの時間で発表してもらいたいと思います。</p>
 </div>
 <p>発表を願いします。</p>
@@ -485,7 +485,8 @@ document.write(`
 <h2>自分の環境で実行してみる<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>ターミナルというソフトを実行してみましょう。<br />
 <code class="docutils literal notranslate"><span class="pre">Finder</span></code>を開くと、<code class="docutils literal notranslate"><span class="pre">アプリケーション</span></code>という項目があると思いますが、その中に<code class="docutils literal notranslate"><span class="pre">ユーテリティ</span></code>というフォルダがあります。それを開いてみてください。
-その中に<code class="docutils literal notranslate"><span class="pre">ターミナル</span></code>というソフトが入っているので、ダブルクリックで開きましょう。</p>
+その中に<code class="docutils literal notranslate"><span class="pre">ターミナル</span></code>というソフトが入っているので、ダブルクリックで開きましょう。<br />
+WSLの人は普通に起動するとターミナルが出てきます。</p>
 <p><img alt="Finder screen" src="_images/finder_screen.png" /></p>
 <p>見た目が異なるかもしれませんが、下のような文字だけの画面が出てくるかと思います。</p>
 <p><img alt="Finder screen" src="_images/terminal_screen.png" /></p>
@@ -496,13 +497,13 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">--</span><span class="n">version</span>
 </pre></div>
 </div>
-<p>こちらも<code class="docutils literal notranslate"><span class="pre">zsh:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found:</span> <span class="pre">python</span></code>となる場合は、Pythonがインストールされていないので、まずはPythonのインストールを行います。</p>
+<p>こちらも<code class="docutils literal notranslate"><span class="pre">bash(zsh):</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found:</span> <span class="pre">python</span></code>となる場合は、Pythonがインストールされていないので、まずはPythonのインストールを行います。</p>
 <section id="minicondapython">
 <h3>パッケージ管理ソフトminicondaによるPythonの導入<a class="headerlink" href="#minicondapython" title="Permalink to this heading">#</a></h3>
 <p>今回はこうしたソフトウェア（パッケージとも呼びます）の管理を行うツールであるminicondaのインストールを紹介します。minicondaはパッケージと呼ばれる単位でソフトウェアを管理し、手軽にインストール/アンインストールを行う管理ツールで、非常に人気があります。</p>
 <p><a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/main">Minicondaの公式サイト</a></p>
 <p>上の公式の中に<a class="reference external" href="https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions"><strong>Quick command line instyall</strong></a>というセクションがあるので、そこの指示に従ってください。</p>
-<p>macOSというタブに切り替えると、必要なステップが表示されます。</p>
+<p>macOS(WSLの場合はLinux)というタブに切り替えると、必要なステップが表示されます。</p>
 <p>ターミナルを再起動してください。うまくいけば、以下のように(base)と表示されます。</p>
 <p><img alt="Finder screen" src="_images/conda_confirmation.png" /></p>
 <p>ここまで来れば、minicondaによってPythonがインストールされているはずです。</p>
@@ -519,8 +520,13 @@ document.write(`
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> 
 </pre></div>
 </div>
-<p>これを打った後に、例えば、もしダウンロードというフォルダに保存されたらFinderからその<code class="docutils literal notranslate"><span class="pre">xxx.py</span></code>というファイルをターミナルのウインドウにドラッグしてください。</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">ユーザー名</span><span class="o">/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">xxx</span><span class="o">.</span><span class="n">py</span>
+<p>これを打った後に、例えば、もしダウンロードというフォルダに保存されたら<code class="docutils literal notranslate"><span class="pre">xxx.py</span></code>というファイルをターミナルのウインドウにドラッグしてください。</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Linux/WSLの場合</span>
+<span class="n">python</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ユーザー名</span><span class="o">/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">xxx</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Macの場合</span>
+<span class="n">python</span> <span class="o">/</span><span class="n">Users</span><span class="o">/</span><span class="n">ユーザー名</span><span class="o">/</span><span class="n">Downloads</span><span class="o">/</span><span class="n">xxx</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>のようになったらオッケーです。Enterを押すと、プログラムがあなたのコンピュータで動くはずです。</p>
