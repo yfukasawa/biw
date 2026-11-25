@@ -6,9 +6,9 @@
 ## 復習
 
 ```{important}
-上のプログラムは`input`関数と`while`ループと変数を使っています。  
-これに加えてリストを使うように改造して、何か小さいプログラムをひとつ作ってきてください。  
-来週のこの時間で発表してもらいたいと思います。  
+自分のプロダクトで使うデータを、リストか辞書としてコードに直接書き、ループで「数える」プログラムを作ってきてください。  
+AIを使っても構いませんが、**全ての行を自分で説明できる**ようにしてください。  
+来週のこの時間で発表してもらいたいと思います。 
 ```
 
 発表を願いします。
@@ -128,6 +128,7 @@ print('Finished')
 ターミナルというソフトを実行してみましょう。  
 `Finder`を開くと、`アプリケーション`という項目があると思いますが、その中に`ユーテリティ`というフォルダがあります。それを開いてみてください。
 その中に`ターミナル`というソフトが入っているので、ダブルクリックで開きましょう。  
+WSLの人は普通に起動するとターミナルが出てきます。
 
 ![Finder screen](finder_screen.png)
 
@@ -145,7 +146,7 @@ python --version
 python3 --version
 ```
 
-こちらも`zsh: command not found: python`となる場合は、Pythonがインストールされていないので、まずはPythonのインストールを行います。
+こちらも`bash(zsh): command not found: python`となる場合は、Pythonがインストールされていないので、まずはPythonのインストールを行います。
 
 ### パッケージ管理ソフトminicondaによるPythonの導入
 
@@ -155,7 +156,7 @@ python3 --version
 
 上の公式の中に[**Quick command line instyall**](https://www.anaconda.com/docs/getting-started/miniconda/install#quickstart-install-instructions)というセクションがあるので、そこの指示に従ってください。
 
-macOSというタブに切り替えると、必要なステップが表示されます。
+macOS(WSLの場合はLinux)というタブに切り替えると、必要なステップが表示されます。
 
 ターミナルを再起動してください。うまくいけば、以下のように(base)と表示されます。
 
@@ -176,9 +177,15 @@ python --version
 ```{code-block}
 python 
 ```
-これを打った後に、例えば、もしダウンロードというフォルダに保存されたらFinderからその`xxx.py`というファイルをターミナルのウインドウにドラッグしてください。
+これを打った後に、例えば、もしダウンロードというフォルダに保存されたら`xxx.py`というファイルをターミナルのウインドウにドラッグしてください。
 
 ```{code-block}
+# Linux/WSLの場合
+python /home/ユーザー名/Downloads/xxx.py
+```
+
+```{code-block}
+# Macの場合
 python /Users/ユーザー名/Downloads/xxx.py
 ```
 
